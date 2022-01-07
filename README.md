@@ -1,0 +1,2 @@
+# Glosario
+Glosario de comandos
