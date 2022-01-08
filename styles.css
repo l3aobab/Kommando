@@ -1,0 +1,63 @@
+html {
+	background-color: black;
+	color: white;
+	font-size: 30px;
+}
+
+/*
+Grid de index.php
+*/
+
+.cuerpo {
+	display: grid;
+	grid-template-areas: "vacio1 muestra vacio2" ;
+
+}
+
+.cuerpo > div {
+	text-align: center;
+	padding: 20px 0;
+}
+
+/*
+Estilos de los links
+*/
+
+a {
+	text-decoration: none;
+}
+
+a:link {
+	color: white;
+}
+
+a:visited {
+	color: inherit;
+}
+
+a:active {
+	text-decoration: none;
+}
+
+a:hover {
+	color: red;
+}
+
+
+/*
+Tipos de switches en index.php
+*/
+
+.tabla {
+	border: 2px white solid;
+	border-radius: 10px;
+	margin-right: 35%;
+	margin-left: 35%;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.tabla:hover {
+	border: 2px red solid;
+}
