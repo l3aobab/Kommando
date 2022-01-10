@@ -19,6 +19,69 @@ Grid de index.php
 	padding: 20px 0;
 }
 
+.nombre {
+	text-align: left;
+}
+
+/*
+Grid para mostrar los comandos y su uso
+*/
+
+.comandos {
+	display: grid;
+	grid-template-areas: "campos campos" ;
+}
+
+.comandos > div {
+	text-align: left;
+
+}
+
+#id_comando {
+	font-size: 20px;
+	padding: 10px 0;
+}
+
+/*
+Grid para poder dar formato a los botones
+*/
+
+.botones {
+	display: grid;
+	grid-template-areas: "add1 menu1";
+	padding: 10px 0;
+}
+
+.add2 {
+	background-color: #E53C3C;
+	border-radius: 3px;
+	border: none;
+	padding: 5px 10px;
+	color: white;
+	font-size: 14px;
+}
+
+.add2:hover {
+	background-color: #8B0000;
+}
+
+.menu2 {
+	background-color: #E53C3C;
+	border-radius: 3px;
+	border: none;
+	padding: 5px 10px;
+	color: white;
+	font-size: 14px;s
+}
+
+.menu2:hover{
+	background-color: #8B0000;
+}
+
+
+
+
+
 /*
 Estilos de los links
 */
@@ -61,3 +124,5 @@ Tipos de switches en index.php
 .tabla:hover {
 	border: 2px red solid;
 }
+
+

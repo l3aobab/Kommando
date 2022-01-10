@@ -23,12 +23,19 @@
 			<input type="text" name="vendor"><br>
 			<label>Comando completo</label>
 			<input type="text" name="completo"><br>
-			<label>Tipo</label>
-			<input type="text" name="tipo"><br>
 			<label>Uso</label>
 			<input type="text" name="uso"><br>
 			<input type="submit" name="add" value="Añadir">
 		</form>
+	</div>
+
+	<div class="botones">
+		<!--Boton para volver al menu principal-->
+		<div class="menu1">
+			<form action="index.php" method="post">
+				<input type="submit" name="volver" value="Volver al menu principal" class="menu2">
+			</form>
+		</div>
 	</div>
 
 	<?php 
@@ -38,11 +45,24 @@
 		if ($conexion) {
 			if (isset($_POST['add'])) {
 				$vendor=$_POST['vendor'];
-				$tipo=$_POST['tipo'];
 				$uso=$_POST['uso'];
 				$completo=$_POST['completo'];
+				$comprobacion=mysqli_query($conexion,"SHOW TABLES");
+
+				if ($comprobacion != FALSE) {
+					if ($vendor == "alcatel") {
+						$consulta1=mysqli_query($conexion,"INSERT INTO alcatel (uso,completo) VALUES ('".$uso."','".$completo."')");
+						
+					}
 				
-				$consulta=mysqli_query($conexion,"INSERT INTO '{$vendor}' (tipo,uso,completo) VALUES ('{$tipo}','{$uso}','{$completo}') ");
+					if ($vendor == "cisco") {
+						$consulta2=mysqli_query($conexion,"INSERT INTO cisco (uso,completo) VALUES ('".$uso."','".$completo."')");
+					}
+
+					if ($vendor == "ruckus") {
+						$consulta3=mysqli_query($conexion,"INSERT INTO ruckus (uso,completo) VALUES ('".$uso."','".$completo."')");
+					}
+				}
 			}
 
 			else {
