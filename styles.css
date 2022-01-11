@@ -47,6 +47,29 @@ input[type=text] {
 }
 
 /*
+Grid para poder dar formato a los botones
+*/
+
+.botones {
+	text-align: left;
+}
+
+input[type=submit] {
+	background-color: black;
+	border-radius: 10px;
+	border: 2px white solid;
+	padding: 10px 20px;
+	color: white;
+	font-size: 25px;
+	margin-top: 10px;
+	width: 30%;
+}
+
+input[type=submit]:hover {
+	background-color: red;
+}
+
+/*
 Grid para mostrar los comandos y su uso
 */
 
@@ -63,41 +86,6 @@ Grid para mostrar los comandos y su uso
 #id_comando {
 	font-size: 20px;
 	padding: 10px 0;
-}
-
-/*
-Grid para poder dar formato a los botones
-*/
-
-.botones {
-	display: grid;
-	grid-template-areas: "add1 menu1";
-	padding: 10px 0;
-}
-
-.add2 {
-	background-color: #E53C3C;
-	border-radius: 3px;
-	border: none;
-	padding: 5px 10px;
-	color: white;
-}
-
-.add2:hover {
-	background-color: #8B0000;
-}
-
-.menu2 {
-	background-color: #E53C3C;
-	border-radius: 3px;
-	border: none;
-	padding: 5px 10px;
-	color: white;
-	font-size: 14px;s
-}
-
-.menu2:hover{
-	background-color: #8B0000;
 }
 
 /*

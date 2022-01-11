@@ -35,7 +35,7 @@
 				<!--Boton para volver al menu principal-->
 				<div class="menu1">
 					<form action="index.php" method="post">
-						<input type="submit" name="volver" value="Volver al menu principal" class="menu2">
+						<input type="submit" name="volver" value="Menu principal" class="menu2">
 					</form>
 				</div>
 			</div>
