@@ -11,7 +11,6 @@ Grid de index.php
 .cuerpo {
 	display: grid;
 	grid-template-areas: "vacio1 muestra vacio2" ;
-
 }
 
 .cuerpo > div {
@@ -21,6 +20,30 @@ Grid de index.php
 
 .nombre {
 	text-align: left;
+}
+
+/*
+Grid de add_command.php
+*/
+
+.cuerpo2 {
+	display: grid;
+	grid-template-areas: "vacio1 muestra vacio2" ;
+}
+
+.cuerpo2 > div {
+	padding: 20px 0;
+}
+
+input[type=text] {
+	width: 100%;
+	padding: 20px 0; 
+	margin: 10px 0;
+	border: 2px white solid;
+	border-radius: 10px;
+	background-color: black;
+	color: white;
+	font-size: 20px;
 }
 
 /*
@@ -58,7 +81,6 @@ Grid para poder dar formato a los botones
 	border: none;
 	padding: 5px 10px;
 	color: white;
-	font-size: 14px;
 }
 
 .add2:hover {
@@ -77,10 +99,6 @@ Grid para poder dar formato a los botones
 .menu2:hover{
 	background-color: #8B0000;
 }
-
-
-
-
 
 /*
 Estilos de los links
@@ -124,5 +142,7 @@ Tipos de switches en index.php
 .tabla:hover {
 	border: 2px red solid;
 }
+
+
 
 
