@@ -131,6 +131,7 @@ Tipos de switches en index.php
 	border: 2px red solid;
 }
 
-
-
-
+hr {
+	height: 1px;
+	background-color: white;
+}

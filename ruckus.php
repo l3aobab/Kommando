@@ -18,6 +18,8 @@
 			</div>
 
 			<div class="comandos">
+				<div class="campos"><b>Comando completo</b><hr/></div>
+				<div class="campos"><b>Uso</b><hr/></div>
 				<?php 
 					$conexion=mysqli_connect('localhost','root','','glosario');
 					if ($conexion) {
@@ -27,14 +29,15 @@
 								$uso=$fila['uso'];
 								$completo=$fila['completo'];
 								echo "
-									<div class='campos'>",$completo,"</div>
-									<div class='campos'>",$uso,"</div>
-								";
+									<div class='campos' id='id_comando'>",$completo,"</div>
+									<div class='campos' id='id_comando'>",$uso,"</div>
+									";
 							}
 						}
 					}
 				?>
 			</div>
+			<hr/>
 			<div class="botones">
 				<!--Boton para añadir un comando a la tabla-->
 				<div class="add1">

@@ -46,9 +46,9 @@
 		
 		$conexion=mysqli_connect('localhost','root','','glosario');
 		if ($conexion) {
-			if (isset($_POST['add']) && isset($_POST['vendor']) && isset($_POST['uso'])  && isset($_POST['completo'])) {
+			if (isset($_POST['add']) && !empty($_POST['vendor']) && !empty($_POST['uso'])  && !empty($_POST['completo'])) {
 
-				$vendor=$_POST['vendor'];
+				$vendor=strtolower($_POST['vendor']);
 				$uso=$_POST['uso'];
 				$completo=$_POST['completo'];
 				$comprobacion=mysqli_query($conexion,"SHOW TABLES");
@@ -57,7 +57,6 @@
 
 					if ($vendor == "alcatel") {
 						$consulta1=mysqli_query($conexion,"INSERT INTO alcatel (uso,completo) VALUES ('".$uso."','".$completo."')");
-						
 					}
 				
 					if ($vendor == "cisco") {

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-01-2022 a las 12:52:14
+-- Tiempo de generación: 12-01-2022 a las 12:09:04
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.34
 
@@ -52,7 +52,14 @@ INSERT INTO `alcatel` (`codigo`, `uso`, `completo`) VALUES
 (13, 'Activar el PoE de un puerto determinado', 'lanpower start x/x'),
 (14, 'Desactivar el PoE de un puerto determinado de forma administrativa', 'interfaces x/x admin down'),
 (15, 'Activar el PoE de un puerto determinado de forma administrativa', 'interfaces x/x admin up'),
-(16, 'Ver miembros del stack', 'show vsf');
+(16, 'Ver miembros del stack', 'show vsf'),
+(17, 'Guardar configuracion', 'write memory flash-synchro'),
+(18, 'Ver la MAC que tiene configurado un puerto', 'show mac-address-table x/x'),
+(20, 'Cambiar la descripcion de un puerto determinado', 'interfaces 1/4 alias \"SERVICIOS_AGRUPADOS_Recepcion\"'),
+(23, 'Realizar un test de cableado', 'interfaces 1/7 tdr-test-start'),
+(24, 'Mostrar el resultado de un test de cableado', 'show interfaces 1/7 tdr-statistics'),
+(25, 'Cambiar la vlan por defecto de un puerto determinado', 'vlan 402 port default 1/11'),
+(26, 'Deshacer stack en el switch', 'stacking disable');
 
 -- --------------------------------------------------------
 
@@ -75,7 +82,15 @@ INSERT INTO `cisco` (`codigo`, `uso`, `completo`) VALUES
 (2, 'Ver stack', 'show switch'),
 (3, 'Realizar un test de cableado', 'test cable-diagnostics tdr interface fastEthernet 0/2'),
 (4, 'Comprobar los resultados de un test de cableado', 'show cable-diagnostics tdr interface fastEthernet 0/2'),
-(5, 'Ver el CDP de un puerto', 'show cdp neighbors fastEthernet 0/8');
+(5, 'Ver el CDP de un puerto', 'show cdp neighbors fastEthernet 0/8'),
+(6, 'Desactivar el PoE de un puerto', 'power inline never'),
+(7, 'Activar el PoE en un puerto', 'power inline auto'),
+(8, 'Desactivar un puerto de forma administrativa', 'shutdown'),
+(9, 'Activar un puerto de forma administrativa', 'no shutdown'),
+(10, 'Cambiar la descripcion de un puerto determinado', 'interfaces fastethernet 1/8 alias'),
+(11, 'Ver la configuracion de un puerto desde \"configure terminal\"', 'do show running-config interface Fa0/6'),
+(12, 'Seleccionar un rango de puertos', 'interface range fastEthernet 0/2-40'),
+(13, 'Cambiar un puerto de vlan', 'switchport access vlan 160');
 
 -- --------------------------------------------------------
 
@@ -88,6 +103,19 @@ CREATE TABLE `ruckus` (
   `uso` varchar(200) COLLATE utf8mb4_spanish_ci NOT NULL,
   `completo` varchar(150) COLLATE utf8mb4_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `ruckus`
+--
+
+INSERT INTO `ruckus` (`codigo`, `uso`, `completo`) VALUES
+(1, 'Ver estado de los puertos', 'show interfaces brief'),
+(2, 'Desactivar el PoE de un puerto', 'no inline power'),
+(3, 'Activar el PoE en un puerto', 'inline power'),
+(4, 'Desactivar un puerto de forma administrativa', 'disable'),
+(5, 'Activar un puerto de forma administrativa', 'enable'),
+(6, 'Realizar un test de cableado', ' phy cable-diagnostics tdr 1/1/24'),
+(7, 'Mostrar el resultado de un test de cableado', 'show cable-diagnostics tdr 1/1/24');
 
 --
 -- Índices para tablas volcadas
@@ -121,19 +149,19 @@ ALTER TABLE `ruckus`
 -- AUTO_INCREMENT de la tabla `alcatel`
 --
 ALTER TABLE `alcatel`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `cisco`
 --
 ALTER TABLE `cisco`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `ruckus`
 --
 ALTER TABLE `ruckus`
-  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

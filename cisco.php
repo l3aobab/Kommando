@@ -18,8 +18,8 @@
 			</div>
 
 			<div class="comandos">
-				<div class="campos"><b>Comando completo</b></div>
-				<div class="campos"><b>Uso</b></div>
+				<div class="campos"><b>Comando completo</b><hr/></div>
+				<div class="campos"><b>Uso</b><hr/></div>
 				<?php 
 					$conexion=mysqli_connect('localhost','root','','glosario');
 					if ($conexion) {
@@ -37,6 +37,7 @@
 					}
 				?>
 			</div>
+			<hr/>
 			<div class="botones">
 				<!--Boton para añadir un comando a la tabla-->
 				<div class="add1">
