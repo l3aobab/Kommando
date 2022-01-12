@@ -13,14 +13,13 @@
 			<h2>Elige un tipo de switch</h2>
 			<div class="vendors">
 				<?php
-					#conexion con la base de datos
+					#Nos conectamos a la bbdd
 					$conexion=mysqli_connect('localhost','root','','glosario');
-
 					if ($conexion) {
+						#Mostramos el nombre de las tablas de nuestra bbdd
 						$ver=mysqli_query($conexion,"SHOW TABLES");
 						if ($ver) {
 							while ($fila=mysqli_fetch_array($ver)) {
-								#aqui hay que hacer divs con cada mierda
 								echo "<a href='".$fila[0].".php'><div class='tabla'>" . $fila[0] . "</div></a>";
 							}
 						}
@@ -28,6 +27,7 @@
 				?>
 				
 			</div>
+			<!--Boton para añadir un comando a la tabla-->
 			<div class="add">
 				<form method="post" action="add_command.php">
 					<input type="submit" name="add" value="Añadir comando">

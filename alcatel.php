@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="cuerpo">
-		<div class="vacio1"></div>
+		<div class="vacio1"/></div>
 		<div class="muestra">
 			<div class="cabecera">
 				<!--Nombre de la tabla-->
@@ -21,8 +21,10 @@
 				<div class="campos"><b>Comando completo</b><hr/></div>
 				<div class="campos"><b>Uso</b><hr/></div>
 				<?php 
+					#Nos conectamos a la bbdd
 					$conexion=mysqli_connect('localhost','root','','glosario');
 					if ($conexion) {
+						#Sacamos de la BBDD los comandos y su respectivo uso
 						$switch=mysqli_query($conexion, "SELECT * FROM alcatel");
 						if ($switch) {
 							while ($fila=mysqli_fetch_array($switch)) {

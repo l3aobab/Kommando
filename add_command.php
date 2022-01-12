@@ -43,18 +43,19 @@
 	</div>
 
 	<?php 
-		
+		#Nos conectamos a la bbdd
 		$conexion=mysqli_connect('localhost','root','','glosario');
 		if ($conexion) {
+			#Comprobamos que se han enviado datos en el formulario anterior y que los input[type=text] no se encuentran vacios
 			if (isset($_POST['add']) && !empty($_POST['vendor']) && !empty($_POST['uso'])  && !empty($_POST['completo'])) {
-
+				#Transformamos todos los $_POST en variables mas sencillas para trabajar y Cambiamos a minuscula la variable $vendor para que no haya incompatibilidades
 				$vendor=strtolower($_POST['vendor']);
 				$uso=$_POST['uso'];
 				$completo=$_POST['completo'];
 				$comprobacion=mysqli_query($conexion,"SHOW TABLES");
 
 				if ($comprobacion != FALSE) {
-
+					#Comprobamos en que tabla se añadira el comando que queremos introducir
 					if ($vendor == "alcatel") {
 						$consulta1=mysqli_query($conexion,"INSERT INTO alcatel (uso,completo) VALUES ('".$uso."','".$completo."')");
 					}

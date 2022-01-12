@@ -89,7 +89,7 @@ Grid para mostrar los comandos y su uso
 }
 
 /*
-Estilos de los links
+Links
 */
 
 a {
@@ -130,6 +130,10 @@ Tipos de switches en index.php
 .tabla:hover {
 	border: 2px red solid;
 }
+
+/*
+Separador
+*/
 
 hr {
 	height: 1px;
